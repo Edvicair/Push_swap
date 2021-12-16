@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_big_sort2.c                                     :+:      :+:    :+:   */
+/*   ft_big_sort1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edvicair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 08:06:13 by edvicair          #+#    #+#             */
-/*   Updated: 2021/12/15 00:23:52 by edvicair         ###   ########.fr       */
+/*   Updated: 2021/12/16 08:31:30 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_nb	ft_tab_start(int *tab, int *tab_sort, int size, int slice)
 	int		j;
 
 	i = 0;
-	j = 0;
 	nb.start = tab[i];
+	nb.start_pos = i;
 	while (i < size)
 	{
 		j = 0;
@@ -46,7 +46,9 @@ t_nb	ft_tab_end(int *tab, int *tab_sort, int size, int slice)
 
 	j = 0;
 	nb = ft_tab_start(tab, tab_sort, size, slice);
-	while (--size > 0)
+	nb.end = tab[--size];
+	nb.end_pos = size;
+	while (size > 0)
 	{
 		j = 0;
 		while (j < slice)
@@ -59,6 +61,7 @@ t_nb	ft_tab_end(int *tab, int *tab_sort, int size, int slice)
 			}
 			j++;
 		}
+		size--;
 	}
 	return (nb);
 }
@@ -119,7 +122,6 @@ t_stack	*ft_remoov(t_stack *st)
 	int		i;
 	int		max;
 
-	i = 0;
 	while ((ft_lstsize(st->b)) >= 1)
 	{
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: edvicair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:47:15 by edvicair          #+#    #+#             */
-/*   Updated: 2021/12/15 00:31:54 by edvicair         ###   ########.fr       */
+/*   Updated: 2021/12/16 05:09:56 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 typedef struct s_list
 {
-	int		nb;
+	int				nb;
 	struct s_list	*next;
-}			t_list;
+}					t_list;
 
 typedef struct s_stack
 {
@@ -74,5 +74,6 @@ void	ft_sort_tree(t_stack *st);
 void	ft_sort_four(t_stack *st);
 void	ft_before_five(t_stack *st, int four);
 void	ft_five(t_stack *st, int four);
+void	ft_free_stack(t_stack *st);
 
 #endif

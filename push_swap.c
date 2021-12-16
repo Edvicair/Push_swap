@@ -6,7 +6,7 @@
 /*   By: edvicair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 09:03:52 by edvicair          #+#    #+#             */
-/*   Updated: 2021/12/15 00:24:23 by edvicair         ###   ########.fr       */
+/*   Updated: 2021/12/16 08:57:18 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,14 @@ int	main(int ac, char **av)
 {
 	t_stack	*st;
 
+	if (ac == 1)
+		return (0);
 	st = malloc(sizeof(t_stack));
 	if (!st)
 		return (0);
 	st->a = NULL;
 	st->b = NULL;
-	if (ac == 1)
-	{
-		free(st);
-		return (0);
-	}
-	if ((ac <= 2) || ft_check(ac, av) == -1)
+	if (ac <= 2 || ft_check(ac, av) == -1)
 	{
 		free(st);
 		if (ft_check(ac, av) == -1)
@@ -96,5 +93,6 @@ int	main(int ac, char **av)
 	st->b = ft_init(0, NULL);
 	if (ft_order(st->a) == 1)
 		st = ft_choose(st, ac);
+	ft_free_stack(st);
 	return (0);
 }

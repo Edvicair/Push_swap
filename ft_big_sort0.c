@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_big_sort.c                                      :+:      :+:    :+:   */
+/*   ft_big_sort0.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edvicair <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 01:05:31 by edvicair          #+#    #+#             */
-/*   Updated: 2021/12/15 00:24:58 by edvicair         ###   ########.fr       */
+/*   Updated: 2021/12/16 08:30:58 by edvicair         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ t_stack	*ft_quick_ten(t_stack *st, int slice)
 		tab = ft_init_tab(st->a, ft_lstsize(st->a));
 		nb = ft_tab_end(tab, tab2, ft_lstsize(st->a), slice);
 		st = big_rotate_a(st, nb);
-		free(tab);
-		tab = ft_init_tab(st->a, ft_lstsize(st->a));
 		free(tab);
 	}
 	free(tab2);

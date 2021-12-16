@@ -13,11 +13,12 @@ PUSH = push_swap
 #PUSH
 
 PUSH_SRC =  check_error.c \
-ft_big_sort.c \
-ft_big_sort2.c \
-ft_tab.c \
+ft_big_sort0.c \
+ft_big_sort1.c \
+ft_init_tab.c \
 ft_five.c \
-ft_init.c \
+ft_init_lst.c \
+ft_free_lst.c \
 ft_itoa.c \
 ft_write_algo.c \
 lib.c \
